@@ -13,8 +13,6 @@ public class SpawnManager : MonoBehaviour
     [SerializeField]
     private List<GameObject> Treasures;
 
-
-
     void Start()
     {
         for (TreasuresSpawned = 0; TreasuresSpawned < TreasuresToSpawn; TreasuresSpawned++)
@@ -33,10 +31,5 @@ public class SpawnManager : MonoBehaviour
             Treasures.RemoveAt(TreasureToSpawnIndex);
             SpawnPositions.RemoveAt(SpawnTransIndex);
         }
-    }
-
-    void Update()
-    {
-        
     }
 }
