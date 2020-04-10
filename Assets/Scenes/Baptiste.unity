@@ -151,9 +151,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d91dad45577a4fe4196c4b4f2f16e3a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TreasuresToSpawn: 0
-  TreasuresSpawned: 0
-  Treasures: []
+  TreasuresToSpawn: 2
+  SpawnPositions:
+  - {fileID: 6642766352180604667}
+  - {fileID: 1412905881}
+  - {fileID: 1516683835}
+  Treasures:
+  - {fileID: 2627460439578681655, guid: ce0bf75eef959964e824f40f80f087a4, type: 3}
+  - {fileID: 6976628325182154161, guid: 3b8f9a3bb2ba99f47932106c3dbd6a42, type: 3}
 --- !u!4 &407713612
 Transform:
   m_ObjectHideFlags: 0
