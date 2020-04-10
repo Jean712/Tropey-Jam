@@ -6,64 +6,59 @@ using UnityEngine.AI;
 public class Inventory : MonoBehaviour
 {
     Rigidbody rgbd;
-    Queue inventory;
+    public Queue<GameObject> inventory;
 
-    public LayerMask walkable;
-    NavMeshAgent agent;
+    public GameObject[] myInventory;
 
-    public float speed;
-    public float maxSpeed;
+    //public float speed;
+    //public float maxSpeed;
 
     private void Awake()
     {
         rgbd = GetComponent<Rigidbody>();
-        inventory = new Queue();
-
-        agent = GetComponent<NavMeshAgent>();
+        inventory = new Queue<GameObject>();
     }
 
     private void Update()
     {
-        rgbd.velocity = Vector3.Lerp(rgbd.velocity, Vector3.zero, 0.05f);
+        //rgbd.velocity = Vector3.Lerp(rgbd.velocity, Vector3.zero, 0.05f);
 
-        if (Input.GetKey(KeyCode.Z))
+        //if (Input.GetKey(KeyCode.Z))
+        //{
+        //    transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
+        //}
+
+        //if (Input.GetKey(KeyCode.S))
+        //{
+        //    transform.rotation = Quaternion.Euler(new Vector3(0, 180, 0));
+        //}
+
+        //if (Input.GetKey(KeyCode.Q))
+        //{
+        //    transform.rotation = Quaternion.Euler(new Vector3(0, 270, 0));
+        //}
+
+        //if (Input.GetKey(KeyCode.D))
+        //{
+        //    transform.rotation = Quaternion.Euler(new Vector3(0, 90, 0));
+        //}
+
+        //if (Input.GetKey(KeyCode.Z) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.Q) || Input.GetKey(KeyCode.D))
+        //{
+        //    rgbd.velocity += transform.forward * speed;
+        //}
+
+        //rgbd.velocity = Vector3.ClampMagnitude(rgbd.velocity, maxSpeed);
+
+        if (inventory.Count >= 1)
         {
-            transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
-        }
-
-        if (Input.GetKey(KeyCode.S))
-        {
-            transform.rotation = Quaternion.Euler(new Vector3(0, 180, 0));
-        }
-
-        if (Input.GetKey(KeyCode.Q))
-        {
-            transform.rotation = Quaternion.Euler(new Vector3(0, 270, 0));
-        }
-
-        if (Input.GetKey(KeyCode.D))
-        {
-            transform.rotation = Quaternion.Euler(new Vector3(0, 90, 0));
-        }
-
-        if (Input.GetKey(KeyCode.Z) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.Q) || Input.GetKey(KeyCode.D))
-        {
-            rgbd.velocity += transform.forward * speed;
-        }
-
-        rgbd.velocity = Vector3.ClampMagnitude(rgbd.velocity, maxSpeed);
-
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        RaycastHit hit;
-
-        if (Input.GetKeyDown(KeyCode.Mouse1))
-        {
-            if (Physics.Raycast(ray, out hit, 100, walkable))
+            if (GetComponent<Player>().actualItem == null)
             {
-                agent.SetDestination(hit.point);
-                agent.isStopped = false;
+                GetComponent<Player>().actualItem = inventory.Dequeue();
             }
         }
+
+        myInventory = inventory.ToArray();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -72,7 +67,7 @@ public class Inventory : MonoBehaviour
         {
             inventory.Enqueue(other.gameObject);
 
-            Destroy(other.gameObject);
+            other.gameObject.SetActive(false);
         }
     }
 }

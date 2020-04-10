@@ -8,9 +8,18 @@ public class Player : MonoBehaviour
     public LayerMask walkable;
     NavMeshAgent agent;
 
+    [Range(0, -90)]
+    public float shootingAngle;
+    public float initialBoost;
+    Transform target;
+
+    public GameObject actualItem;
+
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
+
+        target = transform.Find("Target");
     }
 
     void Update()
@@ -31,10 +40,21 @@ public class Player : MonoBehaviour
         {
             if (Physics.Raycast(ray, out hit, 100, walkable))
             {
-                Vector3 direction = hit.point - transform.position;
-                direction.Normalize();
+                float initialForce;
+                float distance = Vector3.Distance(transform.position, hit.point);
 
-                
+                if (actualItem != null)
+                {
+                    transform.LookAt(hit.point);
+
+                    actualItem.SetActive(true);
+                    actualItem.transform.position = target.position;
+
+                    initialForce = Mathf.Sqrt((distance / Mathf.Sin(2 * shootingAngle)) * Physics.gravity.magnitude) * initialBoost;
+                    actualItem.GetComponent<Rigidbody>().AddForce(transform.forward * initialForce, ForceMode.Impulse);
+
+                    actualItem = null;
+                }
             }
         }
     }
