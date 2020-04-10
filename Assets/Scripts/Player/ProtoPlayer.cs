@@ -13,6 +13,7 @@ public class ProtoPlayer : MonoBehaviour
     private void Awake()
     {
         rgbd = GetComponent<Rigidbody>();
+        inventory = new Queue();
     }
 
     private void Update()
@@ -21,26 +22,44 @@ public class ProtoPlayer : MonoBehaviour
 
         if (Input.GetKey(KeyCode.Z))
         {
-            rgbd.velocity += new Vector3(0, 0, 1 * speed);
+            transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
         }
 
         if (Input.GetKey(KeyCode.S))
         {
-            rgbd.velocity += new Vector3(0, 0, -1 * speed);
+            transform.rotation = Quaternion.Euler(new Vector3(0, 180, 0));
         }
 
         if (Input.GetKey(KeyCode.Q))
         {
-            rgbd.velocity += new Vector3(-1 * speed, 0, 0);
+            transform.rotation = Quaternion.Euler(new Vector3(0, 270, 0));
         }
 
         if (Input.GetKey(KeyCode.D))
         {
-            rgbd.velocity += new Vector3(1 * speed, 0, 0);
+            transform.rotation = Quaternion.Euler(new Vector3(0, 90, 0));
+        }
+
+        if (Input.GetKey(KeyCode.Z) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.Q) || Input.GetKey(KeyCode.D))
+        {
+            rgbd.velocity += transform.forward * speed;
         }
 
         rgbd.velocity = Vector3.ClampMagnitude(rgbd.velocity, maxSpeed);
 
+        if (Input.GetKey(KeyCode.Space))
+        {
 
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Item")
+        {
+            inventory.Enqueue(other.gameObject);
+
+            Destroy(other.gameObject);
+        }
     }
 }
