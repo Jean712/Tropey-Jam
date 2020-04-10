@@ -9,9 +9,9 @@ public class SpawnManager : MonoBehaviour
     private int TreasuresToSpawn;
     private int TreasuresSpawned;
     [SerializeField]
-    private Transform[] SpawnPositions;
+    private List<Transform> SpawnPositions;
     [SerializeField]
-    private GameObject[] Treasures;
+    private List<GameObject> Treasures;
 
 
 
@@ -19,19 +19,19 @@ public class SpawnManager : MonoBehaviour
     {
         for (TreasuresSpawned = 0; TreasuresSpawned < TreasuresToSpawn; TreasuresSpawned++)
         {
-            int SpawnTransIndex = Random.Range(0, SpawnPositions.Length);
+            int SpawnTransIndex = Random.Range(0, SpawnPositions.Count);
             Transform SpawnTrans = SpawnPositions[SpawnTransIndex].transform;
             float SpawnX = SpawnTrans.transform.position.x;
             float SpawnY = SpawnTrans.transform.position.y;
             float SpawnZ = SpawnTrans.transform.position.z;
             Vector3 SpawnVector = new Vector3(SpawnX, SpawnY, SpawnZ);
             
-            //Instantiate Trésor sur la position
-            int TreasureToSpawnIndex = Random.Range(0, Treasures.Length);
+            int TreasureToSpawnIndex = Random.Range(0, Treasures.Count);
             GameObject TreasureToSpawn = Treasures[TreasureToSpawnIndex].gameObject;
             Instantiate(TreasureToSpawn, SpawnVector, Quaternion.identity);
 
-            //Suppr position
+            Treasures.RemoveAt(TreasureToSpawnIndex);
+            SpawnPositions.RemoveAt(SpawnTransIndex);
         }
     }
 
