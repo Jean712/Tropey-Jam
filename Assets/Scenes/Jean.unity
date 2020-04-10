@@ -121,7 +121,7 @@ NavMeshSettings:
     accuratePlacement: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 0}
+  m_NavMeshData: {fileID: 23800000, guid: 0b59f4a0b218f834c851579781199582, type: 2}
 --- !u!1 &178384283
 GameObject:
   m_ObjectHideFlags: 0
@@ -134,8 +134,9 @@ GameObject:
   - component: {fileID: 178384286}
   - component: {fileID: 178384285}
   - component: {fileID: 178384284}
-  - component: {fileID: 178384289}
+  - component: {fileID: 178384290}
   - component: {fileID: 178384288}
+  - component: {fileID: 178384291}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -225,29 +226,50 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 178384283}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 07e35f06b4b30a240b36217388366cfd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
   maxSpeed: 10
---- !u!54 &178384289
-Rigidbody:
+--- !u!195 &178384290
+NavMeshAgent:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 178384283}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 116
-  m_CollisionDetection: 0
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 1
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
+--- !u!114 &178384291
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 178384283}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7a259c74c6bb404b82d6cf850cc8cd9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  walkable:
+    serializedVersion: 2
+    m_Bits: 4294967295
 --- !u!1 &676017922
 GameObject:
   m_ObjectHideFlags: 0
@@ -604,7 +626,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: 0.2164396, y: -0, z: -0, w: 0.97629607}
-  m_LocalPosition: {x: 0, y: 4.05, z: -5.5}
+  m_LocalPosition: {x: 0, y: 4.5, z: -8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -619,7 +641,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 963194225}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e1bc475f4e5e534fbe5aa1c206d21b4, type: 3}
+  m_Script: {fileID: 11500000, guid: 35ad2a9876f2a4c4e9ad4309f21f8467, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   objectToFollow: {fileID: 178384287}
@@ -640,7 +662,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!65 &1027301354
 BoxCollider:
