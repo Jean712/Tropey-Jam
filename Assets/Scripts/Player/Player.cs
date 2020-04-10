@@ -7,6 +7,7 @@ public class Player : MonoBehaviour
 {
     public LayerMask walkable;
     NavMeshAgent agent;
+
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
@@ -23,6 +24,17 @@ public class Player : MonoBehaviour
             {
                 agent.SetDestination(hit.point);
                 agent.isStopped = false;
+            }
+        }
+
+        if (Input.GetKeyDown(KeyCode.Mouse0))
+        {
+            if (Physics.Raycast(ray, out hit, 100, walkable))
+            {
+                Vector3 direction = hit.point - transform.position;
+                direction.Normalize();
+
+                
             }
         }
     }

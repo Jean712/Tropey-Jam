@@ -1,11 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
-public class ProtoPlayer : MonoBehaviour
+public class Inventory : MonoBehaviour
 {
-    private Rigidbody rgbd;
-    private Queue inventory;
+    Rigidbody rgbd;
+    Queue inventory;
+
+    public LayerMask walkable;
+    NavMeshAgent agent;
 
     public float speed;
     public float maxSpeed;
@@ -14,6 +18,8 @@ public class ProtoPlayer : MonoBehaviour
     {
         rgbd = GetComponent<Rigidbody>();
         inventory = new Queue();
+
+        agent = GetComponent<NavMeshAgent>();
     }
 
     private void Update()
@@ -47,9 +53,16 @@ public class ProtoPlayer : MonoBehaviour
 
         rgbd.velocity = Vector3.ClampMagnitude(rgbd.velocity, maxSpeed);
 
-        if (Input.GetKey(KeyCode.Space))
-        {
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit;
 
+        if (Input.GetKeyDown(KeyCode.Mouse1))
+        {
+            if (Physics.Raycast(ray, out hit, 100, walkable))
+            {
+                agent.SetDestination(hit.point);
+                agent.isStopped = false;
+            }
         }
     }
 
