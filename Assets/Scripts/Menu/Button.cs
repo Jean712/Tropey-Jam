@@ -18,7 +18,6 @@ public class Button : MonoBehaviour
 
     public void ChangeScene(string SceneName)
     {
-        Debug.Log(SceneName);
         SceneManager.LoadScene(SceneName, LoadSceneMode.Single);
     }
 
