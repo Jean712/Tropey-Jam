@@ -4,18 +4,18 @@ using UnityEngine;
 
 public class GizmoCreator : MonoBehaviour
 {
-    private enum gizmoAspect {Sphere, WireSphere, Cube, WireCube, Ray};
+    enum gizmoAspect { Sphere, WireSphere, Cube, WireCube, Ray };
     
     [SerializeField]
-    private gizmoAspect shape;
+    gizmoAspect shape;
 
     [SerializeField]
     [Range(0.1f, 10)]
-    private float gizmoSize = 0.25f;
+    float gizmoSize = 0.25f;
     [SerializeField]
-    private Color gizmoColor = Color.green;
+    Color gizmoColor = Color.green;
 
-    private Vector3 cubeSize;
+    Vector3 cubeSize;
 
     private void OnDrawGizmos()
     {

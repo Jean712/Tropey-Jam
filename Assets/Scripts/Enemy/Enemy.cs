@@ -5,8 +5,10 @@ using UnityEngine.AI;
 
 public class Enemy : MonoBehaviour
 {
-    [Range(1,3)]
-    public int state;
+    enum guardState { Stay, Turn, Patrol, Follow };
+
+    [SerializeField]
+    private guardState state;
     public GameManager manager;
     NavMeshAgent agent;
 
@@ -39,29 +41,30 @@ public class Enemy : MonoBehaviour
     {
         switch (state)
         {
-            case 1:
-                //stay
+            case guardState.Stay:
+                // Stay();
                 break;
-            case 2:
+            case guardState.Turn:
                 Turn();
                 break;
-            case 3:
+            case guardState.Patrol:
                 Patrol();
                 break;
-            default:
+            case guardState.Follow:
                 Follow();
                 break;
         }
+
         if (DetectTarget())
         {
-            //manager.GameOver();
-            state = 0;
+            state = guardState.Follow;
         }
     }
 
     void Turn()
     {
         timer += Time.deltaTime;
+
         if (timer >= timing)
         {
             if (droiteGauche == true)
@@ -74,9 +77,11 @@ public class Enemy : MonoBehaviour
                 transform.Rotate(Vector3.up, -rotationAngle);
                 droiteGauche = true;
             }
+
             timer = 0;
         }
     }
+
     void Patrol()
     {
         if (DestinationReached())
@@ -99,35 +104,39 @@ public class Enemy : MonoBehaviour
         void SetNextDestination()
         {
             a++;
+
             if (a >= patrouilles.Length)
             {
                 a = 0;
             }
+
             agent.SetDestination(patrouilles[a].position);
         }
     }
+
     void Follow()
     {
         agent.SetDestination(player.transform.position);
     }
+
     bool DetectTarget()
     {
         Vector3 direction = player.transform.position - childTransform.position;
         float angle = Vector3.Angle(direction, childTransform.forward);
+
         if (angle < childFOV.viewAngle / 2)
         {
-            print('1');
             RaycastHit hit;
+
             if (Physics.Raycast(childTransform.position, direction.normalized, out hit, childFOV.viewRadius))
             {
-                print('2');
                 if (hit.collider.gameObject == player)
                 {
-                    print('3');
                     return true;
                 }
             }
         }
+
         return false;
     }
 }
