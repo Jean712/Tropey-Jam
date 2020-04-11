@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 public class SpawnManager : MonoBehaviour
@@ -15,11 +14,13 @@ public class SpawnManager : MonoBehaviour
     [SerializeField]
     private List<GameObject> Treasures;
 
+    [SerializeField]
+    private GameObject SpotLight;
+
     private void Start()
     {
         TreasuresToSpawn = Treasures.Count;
         InstantiateTreasures();
-        Debug.Log(TreasuresToSpawn);
     }
 
     private void InstantiateTreasures()
@@ -36,9 +37,17 @@ public class SpawnManager : MonoBehaviour
         int TreasureToSpawnIndex = Random.Range(0, Treasures.Count);
         GameObject TreasureToSpawn = Treasures[TreasureToSpawnIndex];
 
-        Instantiate(TreasureToSpawn, SpawnTransform.position, SpawnTransform.rotation);
+        GameObject SpawnedObject = Instantiate(TreasureToSpawn, SpawnTransform.position, SpawnTransform.rotation);
+
+        //InstantiateLight(SpawnedObject);
 
         Treasures.RemoveAt(TreasureToSpawnIndex);
         SpawnPositions.RemoveAt(SpawnTransformIndex);
     }
+    /*
+    private void InstantiateLight(GameObject LastTreasure)
+    {
+        Vector3 LightPos = LastTreasure.transform.position;
+        Instantiate(SpotLight, LightPos.position, Quaternion.identity ,LastTreasure);
+    }*/
 }
