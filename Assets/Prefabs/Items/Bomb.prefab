@@ -77,7 +77,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9355d05185b25f54bb158aafedbfd856, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosionParticle: {fileID: 1892078723244562, guid: 46876a2780737ec45a19d62f88e5ce56,
+  explosionParticle: {fileID: 1892078723244562, guid: 28054e401fad70d479fde500d6b1c9c5,
     type: 3}
   blastRadius: 2
   thrown: 0
@@ -196,17 +196,17 @@ PrefabInstance:
     - target: {fileID: 3768673315499045275, guid: 5a466cb7cc5605e439ed011d53492273,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 0.025
       objectReference: {fileID: 0}
     - target: {fileID: 3768673315499045275, guid: 5a466cb7cc5605e439ed011d53492273,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 3768673315499045275, guid: 5a466cb7cc5605e439ed011d53492273,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 0.025
       objectReference: {fileID: 0}
     - target: {fileID: 3768673315499045275, guid: 5a466cb7cc5605e439ed011d53492273,
         type: 3}

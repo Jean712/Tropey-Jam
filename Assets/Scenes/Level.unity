@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.4366757, g: 0.48427194, b: 0.5645252, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 112000000, guid: 0e782d842744c28469392cb3314d7701,
+  m_LightingDataAsset: {fileID: 112000000, guid: 32f4737202ba28a449f5b5e4fa7e8413,
     type: 2}
   m_UseShadowmask: 1
 --- !u!196 &4
@@ -12286,7 +12286,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35ad2a9876f2a4c4e9ad4309f21f8467, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectToFollow: {fileID: 0}
+  objectToFollow: {fileID: 1897423905}
 --- !u!81 &1005357684
 AudioListener:
   m_ObjectHideFlags: 0
@@ -27991,6 +27991,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3998039038364084965, guid: fc014490ee3a4004fa5021d03d2ea0ec,
     type: 3}
   m_PrefabInstance: {fileID: 1893848852}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1897423905 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4580611277710815490, guid: 8ea837affaea07846821912215000bd3,
+    type: 3}
+  m_PrefabInstance: {fileID: 98824864}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1917299038
 PrefabInstance:
