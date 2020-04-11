@@ -44,79 +44,79 @@ public class Player : MonoBehaviour
                     itemList[0].SetActive(true);
                     break;
 
-                case "DeadEnemy":
+                case "DeadEnemy(Clone)":
                     itemList[1].SetActive(true);
                     break;
 
-                case "Bomb":
+                case "Bomb(Clone)":
                     itemList[2].SetActive(true);
                     break;
 
-                case "PaintingGreen":
+                case "PaintingGreen(Clone)":
                     itemList[3].SetActive(true);
                     break;
 
-                case "PaintingPink":
+                case "PaintingPink(Clone)":
                     itemList[4].SetActive(true);
                     break;
 
-                case "PaintingSwedish":
+                case "PaintingSwedish(Clone)":
                     itemList[5].SetActive(true);
                     break;
 
-                case "PaintingBrokenGreen":
+                case "PaintingBrokenGreen(Clone)":
                     itemList[6].SetActive(true);
                     break;
 
-                case "PaintingBrokenGreenReverse":
+                case "PaintingBrokenGreenReverse(Clone)":
                     itemList[7].SetActive(true);
                     break;
 
-                case "PaintingBrokenPink":
+                case "PaintingBrokenPink(Clone)":
                     itemList[8].SetActive(true);
                     break;
 
-                case "PaintingBrokenPinkReverse":
+                case "PaintingBrokenPinkReverse(Clone)":
                     itemList[9].SetActive(true);
                     break;
 
-                case "PaintingBrokenSwedish":
+                case "PaintingBrokenSwedish(Clone)":
                     itemList[10].SetActive(true);
                     break;
 
-                case "PaintingBrokenSwedishReverse":
+                case "PaintingBrokenSwedishReverse(Clone)":
                     itemList[11].SetActive(true);
                     break;
 
-                case "Toilet":
+                case "Toilet(Clone)":
                     itemList[12].SetActive(true);
                     break;
 
-                case "ToiletBroken1":
+                case "ToiletBroken1(Clone)":
                     itemList[13].SetActive(true);
                     break;
 
-                case "ToiletBroken2":
+                case "ToiletBroken2(Clone)":
                     itemList[14].SetActive(true);
                     break;
 
-                case "Cars":
+                case "Cars(Clone)":
                     itemList[15].SetActive(true);
                     break;
 
-                case "CarBlue":
+                case "CarBlue(Clone)":
                     itemList[16].SetActive(true);
                     break;
 
-                case "CarGreen":
+                case "CarGreen(Clone)":
                     itemList[17].SetActive(true);
                     break;
 
-                case "CarPink":
+                case "CarPink(Clone)":
                     itemList[18].SetActive(true);
                     break;
 
-                case "CarYellow":
+                case "CarYellow(Clone)":
                     itemList[19].SetActive(true);
                     break;
             }

@@ -7,6 +7,7 @@ public class Inventory : MonoBehaviour
 {
     Rigidbody rgbd;
     public Queue<GameObject> inventory;
+    public GameObject bag;
 
     [Header("Debug")]
     public GameObject[] myInventory;
@@ -20,6 +21,17 @@ public class Inventory : MonoBehaviour
 
     private void Update()
     {
+        int length = myInventory.Length;
+
+        //if (length <= 0)
+        //{
+        //    length = 1;
+        //}
+
+        length = Mathf.Clamp(length, 1, 5);
+
+        bag.transform.localScale = new Vector3(length, length, length);
+
         if (inventory.Count >= 1)
         {
             if (GetComponent<Player>().actualItem == null)
