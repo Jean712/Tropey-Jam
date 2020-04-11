@@ -181,7 +181,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   walkable:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 256
   shootingAngle: -15
   initialBoost: 1.5
   actualItem: {fileID: 0}
@@ -198,6 +198,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myInventory: []
+  inventoryValue: 0
 --- !u!1 &4580611278924827767
 GameObject:
   m_ObjectHideFlags: 0

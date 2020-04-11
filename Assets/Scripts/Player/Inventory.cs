@@ -28,7 +28,6 @@ public class Inventory : MonoBehaviour
             }
         }
 
-        myInventory = inventory.ToArray();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -36,10 +35,11 @@ public class Inventory : MonoBehaviour
         if (other.tag == "Item")
         {
             inventory.Enqueue(other.gameObject);
+            myInventory = inventory.ToArray();
 
             if (other.GetComponent<Treasure>() != null)
             {
-                inventoryValue = InventoryValue();
+                inventoryValue = InventoryValue(myInventory);
             }
 
             other.gameObject.SetActive(false);
@@ -48,27 +48,19 @@ public class Inventory : MonoBehaviour
         if (other.tag == "Exit")
         {
             GameObject[] finalInventory = inventory.ToArray();
-
-            for (int i = 0; i < myInventory.Length; i++)
-            {
-                if (myInventory[i].GetComponent<Treasure>() != null)
-                {
-                    Debug.Log("J'ai un trésor !");
-                }
-            }
+            float finalValue = InventoryValue(finalInventory);
         }
     }
 
-    public int InventoryValue()
+    public int InventoryValue(GameObject[] inventoryToCheck)
     {
         int value = 0;
 
-        for (int i = 0; i < myInventory.Length; i++)
+        for (int i = 0; i < inventoryToCheck.Length; i++)
         {
-            if (myInventory[i].GetComponent<Treasure>() != null)
+            if (inventoryToCheck[i].GetComponent<Treasure>() != null)
             {
-                Debug.Log("Un trésor !");
-                value += myInventory[i].GetComponent<Treasure>().treasureValue;
+                value += inventoryToCheck[i].GetComponent<Treasure>().treasureValue;
             }
         }
 

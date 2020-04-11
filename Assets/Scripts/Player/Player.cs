@@ -61,7 +61,8 @@ public class Player : MonoBehaviour
                 }
             }
 
-            GetComponent<Inventory>().InventoryValue();
+            GetComponent<Inventory>().myInventory = GetComponent<Inventory>().inventory.ToArray();
+            GetComponent<Inventory>().inventoryValue = GetComponent<Inventory>().InventoryValue(GetComponent<Inventory>().myInventory);
         }
     }
 }
