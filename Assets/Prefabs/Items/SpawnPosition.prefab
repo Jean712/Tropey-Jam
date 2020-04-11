@@ -45,4 +45,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shape: 2
   gizmoSize: 0.25
-  gizmoColor: {r: 0.62136126, g: 0, b: 1, a: 1}
+  gizmoColor: {r: 0.6717769, g: 0.21226418, b: 1, a: 1}
