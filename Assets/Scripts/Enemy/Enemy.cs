@@ -12,12 +12,11 @@ public class Enemy : MonoBehaviour
     public GameManager manager;
     NavMeshAgent agent;
 
-    //TargetDetected
     Transform childTransform;
     DisplayFOV childFOV;
     public GameObject player;
+    public GameObject deadBody;
 
-    //Turn
     [Header("Turn Settings")]
     [Range(0, 360)]
     public float rotationAngle = 60;
@@ -25,7 +24,6 @@ public class Enemy : MonoBehaviour
     float timer;
     bool droiteGauche = true;
 
-    //Patrol
     [Header("Patrol Settings")]
     public Transform[] patrouilles;
     int a = 0;
@@ -58,6 +56,11 @@ public class Enemy : MonoBehaviour
         if (DetectTarget())
         {
             state = guardState.Follow;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Death();
         }
     }
 
@@ -146,5 +149,14 @@ public class Enemy : MonoBehaviour
         {
             manager.GameOver();
         }
+    }
+
+    public void Death()
+    {
+        Vector3 position = transform.position;
+
+        Instantiate(deadBody, position, transform.rotation);
+
+        Destroy(gameObject);
     }
 }

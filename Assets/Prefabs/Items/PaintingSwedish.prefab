@@ -93,7 +93,7 @@ GameObject:
   - component: {fileID: 801142027586890301}
   - component: {fileID: 801142027586890300}
   - component: {fileID: 8021762319010589890}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PaintingSwedish
   m_TagString: Item
   m_Icon: {fileID: 0}

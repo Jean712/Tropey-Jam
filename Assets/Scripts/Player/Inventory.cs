@@ -49,7 +49,7 @@ public class Inventory : MonoBehaviour
         {
             GameObject[] finalInventory = inventory.ToArray();
             float finalValue = InventoryValue(finalInventory);
-        }
+                }
     }
 
     public int InventoryValue(GameObject[] inventoryToCheck)

@@ -83,9 +83,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abf3681abe2590d4abe357fb404c2e8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  state: 1
+  state: 0
   manager: {fileID: 0}
   player: {fileID: 0}
+  deadBody: {fileID: 213875003693772735, guid: 84f8d57863ade20438a69ddd16aaaffd, type: 3}
   rotationAngle: 60
   timing: 0
   patrouilles: []

@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour
         navMeshAgent = player.GetComponent<NavMeshAgent>();
         move = player.GetComponent<Player>();
     }
+
     public void GameOver()
     {
         if (gameOver == false)
@@ -28,6 +29,7 @@ public class GameManager : MonoBehaviour
             gameOver = true;
         }
     }
+
     public void Reset()
     {
         SceneManager.LoadScene("GameOverScene");

@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 6661503656903542092}
   - component: {fileID: 6661503656903542093}
   - component: {fileID: 6661503656903542097}
+  - component: {fileID: -508726054773453490}
+  - component: {fileID: -7851040540789887953}
   m_Layer: 0
   m_Name: Bomb
   m_TagString: Item
@@ -110,3 +112,33 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &-508726054773453490
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6661503656903542094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9355d05185b25f54bb158aafedbfd856, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  explosionParticle: {fileID: 0}
+  blastRadius: 2
+  thrown: 0
+--- !u!114 &-7851040540789887953
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6661503656903542094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41ca4cc666667384c8b95eee42b46b58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shape: 1
+  gizmoSize: 2
+  gizmoColor: {r: 0, g: 1, b: 0, a: 1}

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5369394825895165781}
   - component: {fileID: 259909110861634834}
   - component: {fileID: -2427943425142163250}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PaintingPink
   m_TagString: Item
   m_Icon: {fileID: 0}

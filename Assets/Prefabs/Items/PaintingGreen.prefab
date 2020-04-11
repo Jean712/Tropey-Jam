@@ -93,7 +93,7 @@ GameObject:
   - component: {fileID: 4166314717709606692}
   - component: {fileID: 4166314717709606693}
   - component: {fileID: 6745412677509487067}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PaintingGreen
   m_TagString: Item
   m_Icon: {fileID: 0}

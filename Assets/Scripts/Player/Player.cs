@@ -51,6 +51,11 @@ public class Player : MonoBehaviour
                     actualItem.transform.position = target.position;
                     actualItem.transform.rotation = target.rotation;
 
+                    if (actualItem.GetComponent<Bomb>() != null)
+                    {
+                        actualItem.GetComponent<Bomb>().thrown = true;
+                    }
+
                     actualItem.GetComponent<Rigidbody>().isKinematic = false;
                     actualItem.GetComponent<Rigidbody>().useGravity = true;
 

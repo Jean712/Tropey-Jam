@@ -9,9 +9,8 @@ public class GizmoCreator : MonoBehaviour
     [SerializeField]
     gizmoAspect shape;
 
-    [SerializeField]
     [Range(0.1f, 10)]
-    float gizmoSize = 0.25f;
+    public float gizmoSize = 0.25f;
     [SerializeField]
     Color gizmoColor = Color.green;
 
