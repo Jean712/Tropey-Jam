@@ -54,7 +54,7 @@ public class Enemy : MonoBehaviour
         }
         if (DetectTarget())
         {
-            //manager.GameOver();
+            manager.GameOver();
             state = 0;
         }
     }
@@ -116,14 +116,11 @@ public class Enemy : MonoBehaviour
         float angle = Vector3.Angle(direction, childTransform.forward);
         if (angle < childFOV.viewAngle / 2)
         {
-            print('1');
             RaycastHit hit;
             if (Physics.Raycast(childTransform.position, direction.normalized, out hit, childFOV.viewRadius))
             {
-                print('2');
                 if (hit.collider.gameObject == player)
                 {
-                    print('3');
                     return true;
                 }
             }
