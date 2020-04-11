@@ -32,7 +32,7 @@ public class SpawnManager : MonoBehaviour
         int TreasureToSpawnIndex = Random.Range(0, Treasures.Count);
         GameObject TreasureToSpawn = Treasures[TreasureToSpawnIndex];
 
-        Instantiate(TreasureToSpawn, SpawnTransform.position, SpawnTransform.rotation, SpawnTransform);
+        Instantiate(TreasureToSpawn, SpawnTransform.position, SpawnTransform.rotation);
 
         Treasures.RemoveAt(TreasureToSpawnIndex);
         SpawnPositions.RemoveAt(SpawnTransformIndex);
