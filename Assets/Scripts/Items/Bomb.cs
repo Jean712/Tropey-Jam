@@ -37,7 +37,9 @@ public class Bomb : MonoBehaviour
 
     private void AOE()
     {
-        Instantiate(explosionParticle, transform.position, transform.rotation);
+        Vector3 position = transform.position;
+
+        Instantiate(explosionParticle, position, transform.rotation);
 
         allEnemies = GameObject.FindGameObjectsWithTag("Enemy");
 
@@ -48,5 +50,7 @@ public class Bomb : MonoBehaviour
                 item.GetComponent<Enemy>().Death();
             }
         }
+
+        Destroy(gameObject);
     }
 }
