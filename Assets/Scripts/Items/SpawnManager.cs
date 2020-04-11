@@ -14,11 +14,22 @@ public class SpawnManager : MonoBehaviour
     [SerializeField]
     private List<GameObject> Treasures;
 
-    [SerializeField]
-    private GameObject SpotLight;
-
+    [Header("Modules")]
+    public GameObject[] moduleList;
+    public int nbModuleLargeur;
+    public int nbModuleHauteur;
+    public float width;
+    public float heigth;
+    private int roomNb;
+    private List<GameObject> addedModule;
+    public Vector3 tileOffset;
     private void Start()
     {
+        addedModule = new List<GameObject>();
+        for (int i = 0; i < nbModuleLargeur*nbModuleHauteur; i++)
+        {
+            AddModule();
+        }
         TreasuresToSpawn = Treasures.Count;
         InstantiateTreasures();
     }
@@ -38,16 +49,36 @@ public class SpawnManager : MonoBehaviour
         GameObject TreasureToSpawn = Treasures[TreasureToSpawnIndex];
 
         GameObject SpawnedObject = Instantiate(TreasureToSpawn, SpawnTransform.position, SpawnTransform.rotation);
-
-        //InstantiateLight(SpawnedObject);
-
+ 
         Treasures.RemoveAt(TreasureToSpawnIndex);
         SpawnPositions.RemoveAt(SpawnTransformIndex);
     }
-    /*
-    private void InstantiateLight(GameObject LastTreasure)
+
+    void AddModule()
     {
-        Vector3 LightPos = LastTreasure.transform.position;
-        Instantiate(SpotLight, LightPos.position, Quaternion.identity ,LastTreasure);
-    }*/
+        GameObject tilePrefab = RandomModule();
+
+        float moduleWidth = width;
+        tileOffset.x += moduleWidth / 2;
+
+        GameObject newModule = Instantiate(tilePrefab, tileOffset, Quaternion.identity, transform);
+        addedModule.Add(newModule);
+
+        tileOffset.x += moduleWidth / 2;
+
+        roomNb += 1;
+
+        if (roomNb == nbModuleLargeur)
+        {
+            tileOffset.z += heigth;
+            tileOffset.x = 0;
+            roomNb = 0;
+        }
+    }
+
+    GameObject RandomModule()
+    {
+        int randomIndex = Random.Range(0, moduleList.Length);
+        return moduleList[randomIndex];
+    }
 }
