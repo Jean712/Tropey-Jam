@@ -49,6 +49,7 @@ public class Player : MonoBehaviour
 
                     actualItem.SetActive(true);
                     actualItem.transform.position = target.position;
+                    actualItem.transform.rotation = target.rotation;
 
                     initialForce = Mathf.Sqrt((distance / Mathf.Sin(2 * shootingAngle)) * Physics.gravity.magnitude) * initialBoost;
                     actualItem.GetComponent<Rigidbody>().AddForce(transform.forward * initialForce, ForceMode.Impulse);
