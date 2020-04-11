@@ -6,6 +6,8 @@ public class SpawnManager : MonoBehaviour
 {
     [Header("Spawn Des Tresors")]
     private int TreasuresSpawned;
+    
+    private float TreasuresToSpawn;
 
     [SerializeField]
     private List<Transform> SpawnPositions;
@@ -15,12 +17,14 @@ public class SpawnManager : MonoBehaviour
 
     private void Start()
     {
+        TreasuresToSpawn = Treasures.Count;
         InstantiateTreasures();
+        Debug.Log(TreasuresToSpawn);
     }
 
     private void InstantiateTreasures()
     {
-        for (TreasuresSpawned = 0; TreasuresSpawned < Treasures.Count; TreasuresSpawned++)
+        for (TreasuresSpawned = 0; TreasuresSpawned < TreasuresToSpawn; TreasuresSpawned++)
             InstantiateTreasure();
     }
 
