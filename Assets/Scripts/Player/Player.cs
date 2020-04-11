@@ -56,9 +56,19 @@ public class Player : MonoBehaviour
                         actualItem.GetComponent<Bomb>().thrown = true;
                     }
 
-                    if (actualItem.GetComponent<Item>() != null)
+                    if (actualItem.GetComponent<Gun>() != null)
                     {
-                        actualItem.GetComponent<Item>().thrown = true;
+                        actualItem.GetComponent<Gun>().thrown = true;
+                    }
+
+                    if (actualItem.GetComponent<DeadEnemy>() != null)
+                    {
+                        actualItem.GetComponent<DeadEnemy>().thrown = true;
+                    }
+
+                    if (actualItem.GetComponent<Treasure>() != null)
+                    {
+                        actualItem.GetComponent<Treasure>().thrown = true;
                     }
 
                     actualItem.GetComponent<Rigidbody>().isKinematic = false;

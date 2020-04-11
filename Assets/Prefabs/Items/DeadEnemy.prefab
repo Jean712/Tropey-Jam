@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 818726280579238702}
   - component: {fileID: 7849538383143930654}
   - component: {fileID: 531209098442672533}
-  - component: {fileID: 4367128483963628702}
+  - component: {fileID: 5574339157605173181}
   m_Layer: 0
   m_Name: DeadEnemy
   m_TagString: Item
@@ -63,7 +63,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &4367128483963628702
+--- !u!114 &5574339157605173181
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -72,7 +72,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 213875003693772735}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3f0128b81c096a241870e1debea9458d, type: 3}
+  m_Script: {fileID: 11500000, guid: 94c1ea2f6ec8685449792121c82f41c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   thrown: 0

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8758589055538373754}
   - component: {fileID: 4699920417182489210}
   - component: {fileID: 4991506878723675945}
-  - component: {fileID: 8995234039491735684}
+  - component: {fileID: -1398386239438835592}
   m_Layer: 0
   m_Name: Miroir
   m_TagString: Untagged
@@ -94,7 +94,7 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &8995234039491735684
+--- !u!114 &-1398386239438835592
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -103,8 +103,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 6976628325182154161}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3f0128b81c096a241870e1debea9458d, type: 3}
+  m_Script: {fileID: 11500000, guid: 8a54ef41a458f974eb26e5d75b6c6265, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   thrown: 0
   explosionParticle: {fileID: 100000, guid: 2507cbe49af930c4989437d84a266cf9, type: 3}
+  treasureValue: 0
+  pieces: []
