@@ -6,28 +6,35 @@ public class SpawnManager : MonoBehaviour
 {
     [Header("Spawn Des Tresors")]
     private int TreasuresSpawned;
+
     [SerializeField]
     private List<Transform> SpawnPositions;
+
     [SerializeField]
     private List<GameObject> Treasures;
 
-    void Start()
+    private void Start()
+    {
+        InstantiateTreasures();
+    }
+
+    private void InstantiateTreasures()
     {
         for (TreasuresSpawned = 0; TreasuresSpawned < Treasures.Count; TreasuresSpawned++)
-        {
-            int SpawnTransIndex = Random.Range(0, SpawnPositions.Count);
-            Transform SpawnTrans = SpawnPositions[SpawnTransIndex].transform;
-            float SpawnX = SpawnTrans.transform.position.x;
-            float SpawnY = SpawnTrans.transform.position.y;
-            float SpawnZ = SpawnTrans.transform.position.z;
-            Vector3 SpawnVector = new Vector3(SpawnX, SpawnY, SpawnZ);
-            
-            int TreasureToSpawnIndex = Random.Range(0, Treasures.Count);
-            GameObject TreasureToSpawn = Treasures[TreasureToSpawnIndex].gameObject;
-            Instantiate(TreasureToSpawn, SpawnVector, Quaternion.identity);
+            InstantiateTreasure();
+    }
 
-            Treasures.RemoveAt(TreasureToSpawnIndex);
-            SpawnPositions.RemoveAt(SpawnTransIndex);
-        }
+    private void InstantiateTreasure()
+    {
+        int SpawnTransformIndex = Random.Range(0, SpawnPositions.Count);
+        Transform SpawnTransform = SpawnPositions[SpawnTransformIndex];
+
+        int TreasureToSpawnIndex = Random.Range(0, Treasures.Count);
+        GameObject TreasureToSpawn = Treasures[TreasureToSpawnIndex];
+
+        Instantiate(TreasureToSpawn, SpawnTransform.position, SpawnTransform.rotation, SpawnTransform);
+
+        Treasures.RemoveAt(TreasureToSpawnIndex);
+        SpawnPositions.RemoveAt(SpawnTransformIndex);
     }
 }
