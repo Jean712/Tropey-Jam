@@ -238,6 +238,7 @@ GameObject:
   - component: {fileID: 963194227}
   - component: {fileID: 963194226}
   - component: {fileID: 963194229}
+  - component: {fileID: 963194230}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -323,6 +324,42 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectToFollow: {fileID: 69662489}
+--- !u!114 &963194230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963194225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d153e5d623a1de4791682a1dfc249a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FadeCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1027301353
 GameObject:
   m_ObjectHideFlags: 0
@@ -335,7 +372,7 @@ GameObject:
   - component: {fileID: 1027301356}
   - component: {fileID: 1027301355}
   - component: {fileID: 1027301354}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -445,6 +482,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5969bc5e3880de49888efad4aeb560f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 69662484}
+  fade: {fileID: 963194230}
 --- !u!4 &1540306384
 Transform:
   m_ObjectHideFlags: 0
@@ -551,6 +590,16 @@ PrefabInstance:
       propertyPath: timing
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6226169170381761679, guid: 51722f721979bf44787f133ccd6da7ea,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 69662484}
+    - target: {fileID: 6226169170381761679, guid: 51722f721979bf44787f133ccd6da7ea,
+        type: 3}
+      propertyPath: manager
+      value: 
+      objectReference: {fileID: 1540306383}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 51722f721979bf44787f133ccd6da7ea, type: 3}
 --- !u!1001 &4580611277646136859
