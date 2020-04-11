@@ -9,8 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3254725068084769355}
-  - component: {fileID: 3254725068084769358}
+  - component: {fileID: 7547566837792110206}
   - component: {fileID: 3254725068084769354}
+  - component: {fileID: 1197619191665165339}
   m_Layer: 0
   m_Name: Gun
   m_TagString: Item
@@ -33,8 +34,8 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &3254725068084769358
-BoxCollider:
+--- !u!64 &7547566837792110206
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -43,9 +44,10 @@ BoxCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.3, y: 0.5, z: 0.5}
-  m_Center: {x: 0.5, y: 0.2, z: 0}
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4068373912626513877, guid: 8e0112535eca74e4189182cf7d209c4a, type: 3}
 --- !u!54 &3254725068084769354
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -62,6 +64,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1197619191665165339
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3254725068084769359}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f0128b81c096a241870e1debea9458d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thrown: 0
+  explosionParticle: {fileID: 100000, guid: 2507cbe49af930c4989437d84a266cf9, type: 3}
 --- !u!1001 &5868585830809395204
 PrefabInstance:
   m_ObjectHideFlags: 0

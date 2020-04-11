@@ -12,7 +12,6 @@ public class Bomb : MonoBehaviour
     [HideInInspector]
     public bool thrown;
     private GameObject[] allEnemies;
-    private bool asHit = false;
 
     private void Awake()
     {
@@ -24,6 +23,8 @@ public class Bomb : MonoBehaviour
 
     private void OnCollisionEnter(Collision collider)
     {
+        bool asHit = false;
+
         if (thrown)
         {
             if (!asHit)

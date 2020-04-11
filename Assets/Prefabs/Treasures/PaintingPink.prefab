@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5369394825895165781}
   - component: {fileID: 259909110861634834}
   - component: {fileID: -2427943425142163250}
+  - component: {fileID: -5520776329670787955}
   m_Layer: 8
   m_Name: PaintingPink
   m_TagString: Item
@@ -76,6 +77,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   treasureValue: 10
+--- !u!114 &-5520776329670787955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7437776370306234059}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f0128b81c096a241870e1debea9458d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thrown: 0
+  explosionParticle: {fileID: 100000, guid: 2507cbe49af930c4989437d84a266cf9, type: 3}
 --- !u!1001 &232161854360361028
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -56,6 +56,11 @@ public class Player : MonoBehaviour
                         actualItem.GetComponent<Bomb>().thrown = true;
                     }
 
+                    if (actualItem.GetComponent<Item>() != null)
+                    {
+                        actualItem.GetComponent<Item>().thrown = true;
+                    }
+
                     actualItem.GetComponent<Rigidbody>().isKinematic = false;
                     actualItem.GetComponent<Rigidbody>().useGravity = true;
 

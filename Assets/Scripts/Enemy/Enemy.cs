@@ -5,10 +5,9 @@ using UnityEngine.AI;
 
 public class Enemy : MonoBehaviour
 {
-    enum guardState { Stay, Turn, Patrol, Follow };
+    public enum guardState { Stay, Turn, Patrol, Follow };
 
-    [SerializeField]
-    private guardState state;
+    public guardState state;
     public GameManager manager;
     NavMeshAgent agent;
 
