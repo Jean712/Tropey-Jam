@@ -1,11 +1,12 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
-public class SpawnManager : MonoBehaviour
+public class Module : MonoBehaviour
 {
     [Header("Spawn Des Tresors")]
     private int TreasuresSpawned;
-    
+
     private float TreasuresToSpawn;
 
     [SerializeField]
@@ -14,21 +15,17 @@ public class SpawnManager : MonoBehaviour
     [SerializeField]
     private List<GameObject> Treasures;
 
-    [SerializeField]
-    private GameObject SpotLight;
-
-    private void Start()
+    void Start()
     {
+        transform.Rotate(Vector3.up, 90 * Random.Range(0, 4));
         TreasuresToSpawn = Treasures.Count;
         InstantiateTreasures();
     }
-
     private void InstantiateTreasures()
     {
         for (TreasuresSpawned = 0; TreasuresSpawned < TreasuresToSpawn; TreasuresSpawned++)
             InstantiateTreasure();
     }
-
     private void InstantiateTreasure()
     {
         int SpawnTransformIndex = Random.Range(0, SpawnPositions.Count);
@@ -39,15 +36,7 @@ public class SpawnManager : MonoBehaviour
 
         GameObject SpawnedObject = Instantiate(TreasureToSpawn, SpawnTransform.position, SpawnTransform.rotation);
 
-        //InstantiateLight(SpawnedObject);
-
         Treasures.RemoveAt(TreasureToSpawnIndex);
         SpawnPositions.RemoveAt(SpawnTransformIndex);
     }
-    /*
-    private void InstantiateLight(GameObject LastTreasure)
-    {
-        Vector3 LightPos = LastTreasure.transform.position;
-        Instantiate(SpotLight, LightPos.position, Quaternion.identity ,LastTreasure);
-    }*/
 }
