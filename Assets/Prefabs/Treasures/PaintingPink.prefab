@@ -77,7 +77,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thrown: 0
-  explosionParticle: {fileID: 100000, guid: 2507cbe49af930c4989437d84a266cf9, type: 3}
+  explosionParticle: {fileID: 1280141305896002, guid: a99a07b2b2f669e4bbbfbb646790f8df,
+    type: 3}
   pieces:
   - {fileID: 3073131365454914260, guid: e3654587f6d684d409f5b417ff137e75, type: 3}
   - {fileID: 3243020180171429323, guid: e9aa3428a197c3f4fb56cd67bc7391a8, type: 3}

@@ -27,7 +27,6 @@ public class Inventory : MonoBehaviour
                 GetComponent<Player>().actualItem = inventory.Dequeue();
             }
         }
-
     }
 
     private void OnTriggerEnter(Collider other)
@@ -49,7 +48,7 @@ public class Inventory : MonoBehaviour
         {
             GameObject[] finalInventory = inventory.ToArray();
             float finalValue = InventoryValue(finalInventory);
-                }
+        }
     }
 
     public int InventoryValue(GameObject[] inventoryToCheck)

@@ -158,7 +158,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thrown: 0
-  explosionParticle: {fileID: 100000, guid: 2507cbe49af930c4989437d84a266cf9, type: 3}
+  explosionParticle: {fileID: 1280141305896002, guid: a99a07b2b2f669e4bbbfbb646790f8df,
+    type: 3}
   pieces:
   - {fileID: 3243020180171429323, guid: 5eb952081a4568846a4cd1bc16fccd75, type: 3}
   - {fileID: 3243020180171429323, guid: 09d182aeb2c6b4b4eb3323fb20d2e2c7, type: 3}
