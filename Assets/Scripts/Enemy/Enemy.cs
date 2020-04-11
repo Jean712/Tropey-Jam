@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class Ennemis : MonoBehaviour
+public class Enemy : MonoBehaviour
 {
     [Range(1,3)]
     public int state;
@@ -112,7 +112,6 @@ public class Ennemis : MonoBehaviour
     }
     bool DetectTarget()
     {
-        print('0');
         Vector3 direction = player.transform.position - childTransform.position;
         float angle = Vector3.Angle(direction, childTransform.forward);
         if (angle < childFOV.viewAngle / 2)

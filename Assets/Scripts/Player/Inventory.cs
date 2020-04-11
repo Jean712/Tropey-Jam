@@ -8,7 +8,9 @@ public class Inventory : MonoBehaviour
     Rigidbody rgbd;
     public Queue<GameObject> inventory;
 
+    [Header("Debug")]
     public GameObject[] myInventory;
+    public int inventoryValue;
 
     private void Awake()
     {
@@ -33,11 +35,51 @@ public class Inventory : MonoBehaviour
     {
         if (other.tag == "Item")
         {
-            Debug.Log("lecul");
-
             inventory.Enqueue(other.gameObject);
+
+            if (other.GetComponent<Treasure>() != null)
+            {
+                inventoryValue = InventoryValue();
+            }
 
             other.gameObject.SetActive(false);
         }
+
+        if (other.tag == "Exit")
+        {
+            GameObject[] finalInventory = inventory.ToArray();
+
+            for (int i = 0; i < myInventory.Length; i++)
+            {
+                if (myInventory[i].GetComponent<Treasure>() != null)
+                {
+                    Debug.Log("J'ai un trésor !");
+                }
+            }
+        }
+    }
+
+    public int InventoryValue()
+    {
+        int value = 0;
+
+        for (int i = 0; i < myInventory.Length; i++)
+        {
+            if (myInventory[i].GetComponent<Treasure>() != null)
+            {
+                Debug.Log("Un trésor !");
+                value += myInventory[i].GetComponent<Treasure>().treasureValue;
+            }
+        }
+
+        if (GetComponent<Player>().actualItem != null)
+        {
+            if (GetComponent<Player>().actualItem.GetComponent<Treasure>() != null)
+            {
+                value += GetComponent<Player>().actualItem.GetComponent<Treasure>().treasureValue;
+            }
+        }
+
+        return value;
     }
 }

@@ -11,8 +11,9 @@ GameObject:
   - component: {fileID: 4521037956780991707}
   - component: {fileID: 5369394825895165781}
   - component: {fileID: 259909110861634834}
+  - component: {fileID: -2427943425142163250}
   m_Layer: 0
-  m_Name: Painting
+  m_Name: PaintingPink
   m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -62,6 +63,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &-2427943425142163250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7437776370306234059}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a54ef41a458f974eb26e5d75b6c6265, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  treasureValue: 10
 --- !u!1001 &232161854360361028
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -127,7 +141,7 @@ PrefabInstance:
     - target: {fileID: -927199367670048503, guid: 0d2686ca6450b8f47a85c7fcedc6133f,
         type: 3}
       propertyPath: m_Name
-      value: painting
+      value: Painting
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0d2686ca6450b8f47a85c7fcedc6133f, type: 3}

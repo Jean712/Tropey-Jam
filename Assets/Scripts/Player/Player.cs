@@ -15,7 +15,7 @@ public class Player : MonoBehaviour
 
     public GameObject actualItem;
 
-    void Start()
+    void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
 
@@ -51,12 +51,17 @@ public class Player : MonoBehaviour
                     actualItem.transform.position = target.position;
                     actualItem.transform.rotation = target.rotation;
 
+                    actualItem.GetComponent<Rigidbody>().isKinematic = false;
+                    actualItem.GetComponent<Rigidbody>().useGravity = true;
+
                     initialForce = Mathf.Sqrt((distance / Mathf.Sin(2 * shootingAngle)) * Physics.gravity.magnitude) * initialBoost;
                     actualItem.GetComponent<Rigidbody>().AddForce(transform.forward * initialForce, ForceMode.Impulse);
 
                     actualItem = null;
                 }
             }
+
+            GetComponent<Inventory>().InventoryValue();
         }
     }
 }

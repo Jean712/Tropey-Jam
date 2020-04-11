@@ -127,7 +127,7 @@ PrefabInstance:
     - target: {fileID: -927199367670048503, guid: 8e0112535eca74e4189182cf7d209c4a,
         type: 3}
       propertyPath: m_Name
-      value: gun
+      value: Gun
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8e0112535eca74e4189182cf7d209c4a, type: 3}
