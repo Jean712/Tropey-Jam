@@ -5,7 +5,7 @@ using UnityEngine;
 public class Bomb : MonoBehaviour
 {
     private Rigidbody rgbd;
-    private MeshRenderer mshr;
+    private SphereCollider sphc;
 
     public GameObject explosionParticle;
     public float blastRadius;
@@ -19,7 +19,7 @@ public class Bomb : MonoBehaviour
         GetComponent<GizmoCreator>().gizmoSize = blastRadius;
 
         rgbd = GetComponent<Rigidbody>();
-        mshr = GetComponentInChildren<MeshRenderer>();
+        sphc = GetComponent<SphereCollider>();
     }
 
     private void OnCollisionEnter(Collision collider)
@@ -29,9 +29,6 @@ public class Bomb : MonoBehaviour
             if (!asHit)
             {
                 AOE();
-
-                mshr.enabled = false;
-                Destroy(gameObject, 3);
             }
 
             asHit = true;

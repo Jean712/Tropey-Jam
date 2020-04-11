@@ -514,11 +514,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 8063435503315960229, guid: 8ea837affaea07846821912215000bd3,
-        type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 4580611278924827765, guid: 8ea837affaea07846821912215000bd3, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 8ea837affaea07846821912215000bd3, type: 3}
@@ -969,7 +964,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh16822
+  m_Name: pb_Mesh14074
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
