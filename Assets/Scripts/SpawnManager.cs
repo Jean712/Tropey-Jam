@@ -5,8 +5,6 @@ using UnityEngine;
 public class SpawnManager : MonoBehaviour
 {
     [Header("Spawn Des Tresors")]
-    [SerializeField]
-    private int TreasuresToSpawn;
     private int TreasuresSpawned;
     [SerializeField]
     private List<Transform> SpawnPositions;
@@ -15,7 +13,7 @@ public class SpawnManager : MonoBehaviour
 
     void Start()
     {
-        for (TreasuresSpawned = 0; TreasuresSpawned < TreasuresToSpawn; TreasuresSpawned++)
+        for (TreasuresSpawned = 0; TreasuresSpawned < Treasures.Count; TreasuresSpawned++)
         {
             int SpawnTransIndex = Random.Range(0, SpawnPositions.Count);
             Transform SpawnTrans = SpawnPositions[SpawnTransIndex].transform;
