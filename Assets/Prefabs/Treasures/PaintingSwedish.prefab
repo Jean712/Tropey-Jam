@@ -93,6 +93,7 @@ GameObject:
   - component: {fileID: 801142027586890301}
   - component: {fileID: 801142027586890300}
   - component: {fileID: 8021762319010589890}
+  - component: {fileID: -5000801065540566928}
   m_Layer: 8
   m_Name: PaintingSwedish
   m_TagString: Item
@@ -158,7 +159,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thrown: 0
   explosionParticle: {fileID: 100000, guid: 2507cbe49af930c4989437d84a266cf9, type: 3}
-  treasureValue: 5
   pieces:
   - {fileID: 8955155903418551496, guid: d9b9f9a93a38b6241856b2944abb2721, type: 3}
   - {fileID: 3243020180171429323, guid: 58acd4aa88d822542a38e3f97474c938, type: 3}
+--- !u!114 &-5000801065540566928
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 801142027586890243}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be1e0cd09d5d6444fbdd8a4fc9c9ccde, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  treasureValue: 10
