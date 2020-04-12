@@ -37,11 +37,13 @@ public class Player : MonoBehaviour
             itemList[i].SetActive(false);
         }
     }
+
     void Start()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
         move = GetComponent<Player>();
     }
+
     void Update()
     {
         for (int i = 0; i < itemList.Length; i++)
@@ -215,6 +217,7 @@ public class Player : MonoBehaviour
             GetComponent<Inventory>().inventoryValue = GetComponent<Inventory>().InventoryValue(GetComponent<Inventory>().myInventory);
         }
     }
+
     public void GameOver()
     {
         if (gameOver == false)
@@ -226,6 +229,7 @@ public class Player : MonoBehaviour
             gameOver = true;
         }
     }
+
     public void Reset()
     {
         SceneManager.LoadScene("GameOverScene");
