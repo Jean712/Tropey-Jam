@@ -9,12 +9,12 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: cb12d839d1c1ead448d3b17bf0b570ae
   - enabled: 1
-    path: Assets/Scenes/Baptiste.unity
-    guid: c49a591cb4148e746a03b26c8da8adf7
+    path: Assets/Scenes/Level.unity
+    guid: e67582498b0b9ec41b2a471644d9cd64
   - enabled: 1
     path: Assets/Scenes/Credits.unity
     guid: 47257aa8e49d0414f8898e09cb2f75f1
   - enabled: 1
-    path: Assets/Scenes/GameOverScene.unity
-    guid: 69e796922218fcc43ae407325ed6ee4d
+    path: Assets/Scenes/GameOver.unity
+    guid: 17acaf2e9d8dbec4eb3ffaa94254ccae
   m_configObjects: {}
