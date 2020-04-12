@@ -5,28 +5,24 @@ using UnityEngine.AI;
 
 public class Inventory : MonoBehaviour
 {
-    Rigidbody rgbd;
     public Queue<GameObject> inventory;
     public GameObject bag;
 
     [Header("Debug")]
     public GameObject[] myInventory;
     public int inventoryValue;
-
+    public static float finalValue;
     private void Awake()
     {
-        rgbd = GetComponent<Rigidbody>();
         inventory = new Queue<GameObject>();
     }
-
+    private void Start()
+    {
+        finalValue = 0;
+    }
     private void Update()
     {
         int length = myInventory.Length;
-
-        //if (length <= 0)
-        //{
-        //    length = 1;
-        //}
 
         length = Mathf.Clamp(length, 1, 5);
 
@@ -59,7 +55,7 @@ public class Inventory : MonoBehaviour
         if (other.tag == "Exit")
         {
             GameObject[] finalInventory = inventory.ToArray();
-            float finalValue = InventoryValue(finalInventory);
+            finalValue = InventoryValue(finalInventory);
         }
     }
 
