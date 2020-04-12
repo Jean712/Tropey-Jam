@@ -24,6 +24,7 @@ public class Enemy : MonoBehaviour
     public float timing;
     float timer;
     bool droiteGauche = true;
+    bool starting;
 
     [Header("Patrol Settings")]
     public Transform[] patrouilles;
@@ -41,34 +42,34 @@ public class Enemy : MonoBehaviour
         adsr = GetComponent<AudioSource>();
         childFOV = GetComponentInChildren<DisplayFOV>();
         childTransform = GetComponentInChildren<Transform>();
+
+        StartCoroutine(Starting(0.7f));
     }
 
     void Update()
     {
-        switch (state)
+        if (starting)
         {
-            case guardState.Stay:
-                // Stay();
-                break;
-            case guardState.Turn:
-                Turn();
-                break;
-            case guardState.Patrol:
-                Patrol();
-                break;
-            case guardState.Follow:
-                Follow();
-                break;
+            switch (state)
+            {
+                case guardState.Stay:
+                    // Stay();
+                    break;
+                case guardState.Turn:
+                    Turn();
+                    break;
+                case guardState.Patrol:
+                    Patrol();
+                    break;
+                case guardState.Follow:
+                    Follow();
+                    break;
+            }
         }
 
         if (DetectTarget())
         {
             state = guardState.Follow;
-        }
-
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            Death();
         }
     }
 
@@ -171,5 +172,12 @@ public class Enemy : MonoBehaviour
         GetComponent<DisplayFOV>().viewAngle = 0;
 
         Destroy(gameObject, 1);
+    }
+
+    IEnumerator Starting(float time)
+    {
+        yield return new WaitForSeconds(time);
+
+        starting = true;
     }
 }
