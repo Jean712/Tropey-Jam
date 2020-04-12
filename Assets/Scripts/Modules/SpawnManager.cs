@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class SpawnManager : MonoBehaviour
 {
     
-
     [Header("Modules")]
     public GameObject[] moduleList;
     public int nbModuleLargeur;

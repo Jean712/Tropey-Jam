@@ -8,12 +8,11 @@ public class Enemy : MonoBehaviour
     public enum guardState { Stay, Turn, Patrol, Follow };
 
     public guardState state;
-    public GameManager manager;
     NavMeshAgent agent;
 
     Transform childTransform;
     DisplayFOV childFOV;
-    public GameObject player;
+    GameObject player;
     public GameObject deadBody;
 
     [Header("Turn Settings")]
@@ -29,6 +28,7 @@ public class Enemy : MonoBehaviour
 
     void Start()
     {
+        player = GameObject.Find("Player").gameObject;
         agent = GetComponent<NavMeshAgent>();
         childFOV = GetComponentInChildren<DisplayFOV>();
         childTransform = GetComponentInChildren<Transform>();
@@ -146,7 +146,7 @@ public class Enemy : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            manager.GameOver();
+            player.GetComponent<Player>().GameOver();
         }
     }
 

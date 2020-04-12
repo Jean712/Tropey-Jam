@@ -2,9 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
+    NavMeshAgent navMeshAgent;
+    Player move;
+    bool gameOver;
+    public FadeCamera fade;
+
     public LayerMask walkable;
     NavMeshAgent agent;
 
@@ -26,7 +32,11 @@ public class Player : MonoBehaviour
             itemList[i].SetActive(false);
         }
     }
-
+    void Start()
+    {
+        navMeshAgent = GetComponent<NavMeshAgent>();
+        move = GetComponent<Player>();
+    }
     void Update()
     {
         for (int i = 0; i < itemList.Length; i++)
@@ -193,5 +203,20 @@ public class Player : MonoBehaviour
             GetComponent<Inventory>().myInventory = GetComponent<Inventory>().inventory.ToArray();
             GetComponent<Inventory>().inventoryValue = GetComponent<Inventory>().InventoryValue(GetComponent<Inventory>().myInventory);
         }
+    }
+    public void GameOver()
+    {
+        if (gameOver == false)
+        {
+            move.enabled = false;
+            navMeshAgent.enabled = false;
+            fade.RedoFade();
+            Invoke("Reset", 2);
+            gameOver = true;
+        }
+    }
+    public void Reset()
+    {
+        SceneManager.LoadScene("GameOverScene");
     }
 }
