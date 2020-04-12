@@ -4,9 +4,19 @@ using UnityEngine;
 
 public class DeadEnemy : MonoBehaviour
 {
+    AudioSource adsr;
+
     [HideInInspector]
     public bool thrown;
-    public GameObject explosionParticle;
+    public GameObject hitParticle;
+
+    [Header("Audio")]
+    public AudioClip hit;
+
+    private void Awake()
+    {
+        adsr = GetComponent<AudioSource>();
+    }
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -14,7 +24,8 @@ public class DeadEnemy : MonoBehaviour
         {
             Vector3 position = transform.position;
 
-            Instantiate(explosionParticle, position, transform.rotation);
+            Instantiate(hitParticle, position, transform.rotation);
+            adsr.PlayOneShot(hit);
 
             if (collision.gameObject.GetComponent<Enemy>() != null)
             {

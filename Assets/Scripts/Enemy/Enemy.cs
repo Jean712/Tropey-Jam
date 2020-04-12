@@ -9,6 +9,9 @@ public class Enemy : MonoBehaviour
 
     public guardState state;
     NavMeshAgent agent;
+    BoxCollider boxc;
+    MeshRenderer mshr;
+    AudioSource adsr;
 
     Transform childTransform;
     DisplayFOV childFOV;
@@ -26,10 +29,16 @@ public class Enemy : MonoBehaviour
     public Transform[] patrouilles;
     int a = 0;
 
+    [Header("Audio")]
+    public AudioClip death;
+
     void Start()
     {
         player = GameObject.Find("Player").gameObject;
         agent = GetComponent<NavMeshAgent>();
+        boxc = GetComponent<BoxCollider>();
+        mshr = GetComponentInChildren<MeshRenderer>();
+        adsr = GetComponent<AudioSource>();
         childFOV = GetComponentInChildren<DisplayFOV>();
         childTransform = GetComponentInChildren<Transform>();
     }
@@ -155,7 +164,12 @@ public class Enemy : MonoBehaviour
         Vector3 position = transform.position;
 
         Instantiate(deadBody, position, transform.rotation);
+        adsr.PlayOneShot(death);
 
-        Destroy(gameObject);
+        boxc.enabled = false;
+        mshr.enabled = false;
+        GetComponent<DisplayFOV>().viewAngle = 0;
+
+        Destroy(gameObject, 1);
     }
 }

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8395901065954985947}
   - component: {fileID: 52393640594644053}
   - component: {fileID: 5305995097838763538}
+  - component: {fileID: 7739435438100812641}
   - component: {fileID: 1140273669192711397}
   m_Layer: 8
   m_Name: PaintingBrokenSwedishReverse
@@ -63,6 +64,102 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!82 &7739435438100812641
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3243020180171429323}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!114 &1140273669192711397
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -76,7 +173,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thrown: 0
-  explosionParticle: {fileID: 100000, guid: 2507cbe49af930c4989437d84a266cf9, type: 3}
+  hitParticle: {fileID: 100000, guid: 2507cbe49af930c4989437d84a266cf9, type: 3}
+  hits:
+  - {fileID: 8300000, guid: 19666eff6e6d1784882c2820b5dea882, type: 3}
+  - {fileID: 8300000, guid: dc1530f2cec9c0345a97507b34022284, type: 3}
+  - {fileID: 8300000, guid: 62e5b486e7d64a94e9cd475d6dda11cb, type: 3}
+  - {fileID: 8300000, guid: 671a0cdcbbb9e964c97e46dc7dd03909, type: 3}
+  - {fileID: 8300000, guid: 3a33cd822686b8a47b46920eb5219246, type: 3}
+  - {fileID: 8300000, guid: 1a0ad0f4d2b4126419c374735438b806, type: 3}
+  - {fileID: 8300000, guid: 5f8dd3cf513eb034680f1ba06ccf9d01, type: 3}
+  - {fileID: 8300000, guid: 64722d0d2fe27bc4e8a9a9f7eb613257, type: 3}
+  - {fileID: 8300000, guid: 16f188164bda6d2498f623d78d2ac175, type: 3}
+  - {fileID: 8300000, guid: 0c26796e8734d3042ab96237da7c4344, type: 3}
 --- !u!1001 &8703997937615129500
 PrefabInstance:
   m_ObjectHideFlags: 0

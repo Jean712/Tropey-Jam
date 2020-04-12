@@ -4,14 +4,19 @@ using UnityEngine;
 
 public class Bomb : MonoBehaviour
 {
-    private Rigidbody rgbd;
-    private SphereCollider sphc;
+    Rigidbody rgbd;
+    SphereCollider sphc;
+    MeshRenderer mshr;
+    AudioSource adsr;
 
     public GameObject explosionParticle;
     public float blastRadius;
     [HideInInspector]
     public bool thrown;
-    private GameObject[] allEnemies;
+    GameObject[] allEnemies;
+
+    [Header("Audio")]
+    public AudioClip explosion;
 
     private void Awake()
     {
@@ -19,6 +24,8 @@ public class Bomb : MonoBehaviour
 
         rgbd = GetComponent<Rigidbody>();
         sphc = GetComponent<SphereCollider>();
+        mshr = GetComponentInChildren<MeshRenderer>();
+        adsr = GetComponent<AudioSource>();
     }
 
     private void OnCollisionEnter(Collision collider)
@@ -30,6 +37,9 @@ public class Bomb : MonoBehaviour
             if (!asHit)
             {
                 AOE();
+
+                sphc.enabled = false;
+                mshr.enabled = false;
             }
 
             asHit = true;
@@ -41,6 +51,7 @@ public class Bomb : MonoBehaviour
         Vector3 position = transform.position;
 
         Instantiate(explosionParticle, position, transform.rotation);
+        adsr.PlayOneShot(explosion);
 
         allEnemies = GameObject.FindGameObjectsWithTag("Enemy");
 
@@ -52,6 +63,6 @@ public class Bomb : MonoBehaviour
             }
         }
 
-        Destroy(gameObject);
+        Destroy(gameObject, 1);
     }
 }

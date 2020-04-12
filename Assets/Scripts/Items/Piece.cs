@@ -4,9 +4,19 @@ using UnityEngine;
 
 public class Piece : MonoBehaviour
 {
+    AudioSource adsr;
+
     [HideInInspector]
     public bool thrown;
-    public GameObject explosionParticle;
+    public GameObject hitParticle;
+
+    [Header("Audio")]
+    public AudioClip[] hits;
+
+    private void Awake()
+    {
+        adsr = GetComponent<AudioSource>();
+    }
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -14,7 +24,8 @@ public class Piece : MonoBehaviour
         {
             Vector3 position = transform.position;
 
-            Instantiate(explosionParticle, position, transform.rotation);
+            Instantiate(hitParticle, position, transform.rotation);
+            adsr.PlayOneShot(hits[Random.Range(0, hits.Length)]);
 
             if (collision.gameObject.GetComponent<Enemy>() != null)
             {

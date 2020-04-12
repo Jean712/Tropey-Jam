@@ -7,7 +7,7 @@ public class GizmoCreator : MonoBehaviour
     enum gizmoAspect { Sphere, WireSphere, Cube, WireCube, Ray };
     
     [SerializeField]
-    gizmoAspect shape;
+    gizmoAspect shape = gizmoAspect.Cube;
 
     [Range(0.1f, 10)]
     public float gizmoSize = 0.25f;

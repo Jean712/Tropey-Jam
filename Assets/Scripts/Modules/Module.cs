@@ -10,10 +10,10 @@ public class Module : MonoBehaviour
     private float TreasuresToSpawn;
 
     [SerializeField]
-    private List<Transform> SpawnPositions;
+    private List<Transform> SpawnPositions = new List<Transform>();
 
     [SerializeField]
-    private List<GameObject> Treasures;
+    private List<GameObject> Treasures = new List<GameObject>();
 
     void Start()
     {

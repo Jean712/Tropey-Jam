@@ -4,18 +4,30 @@ using UnityEngine;
 
 public class Cars : MonoBehaviour
 {
+    BoxCollider boxc;
+    AudioSource adsr;
+
     [HideInInspector]
     public bool thrown;
+    public GameObject hitParticle;
     public GameObject explosionParticle;
     public GameObject[] pieces;
+
+    [Header("Audio")]
+    public AudioClip[] hits;
+    public AudioClip explosion;
+
+    private void Awake()
+    {
+        boxc = GetComponent<BoxCollider>();
+        adsr = GetComponent<AudioSource>();
+    }
 
     private void OnCollisionEnter(Collision collision)
     {
         if (thrown)
         {
             Vector3 position = transform.position;
-
-            Instantiate(explosionParticle, position, transform.rotation);
 
             if (collision.gameObject.GetComponent<Enemy>() != null)
             {
@@ -31,7 +43,22 @@ public class Cars : MonoBehaviour
                 Instantiate(pieces[2], position0, transform.rotation);
                 Instantiate(pieces[3], position1, transform.rotation);
 
-                Destroy(gameObject);
+                Instantiate(explosionParticle, position, transform.rotation);
+                adsr.PlayOneShot(explosion);
+
+                boxc.enabled = false;
+
+                foreach (Transform child in transform)
+                {
+                    Destroy(child.gameObject);
+                }
+
+                Destroy(gameObject, 1);
+            }
+            else
+            {
+                Instantiate(hitParticle, position, transform.rotation);
+                adsr.PlayOneShot(hits[Random.Range(0, hits.Length)]);
             }
 
             thrown = false;

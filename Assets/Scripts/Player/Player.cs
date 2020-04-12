@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class Player : MonoBehaviour
 {
     NavMeshAgent navMeshAgent;
+    AudioSource adsr;
     Player move;
     bool gameOver;
     public FadeCamera fade;
@@ -22,9 +23,13 @@ public class Player : MonoBehaviour
 
     public GameObject actualItem;
 
+    [Header("Audio")]
+    public AudioClip launch;
+
     void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
+        adsr = GetComponent<AudioSource>();
         target = transform.Find("Target");
 
         for (int i = 0; i < itemList.Length; i++)
@@ -155,6 +160,8 @@ public class Player : MonoBehaviour
                 {
                     transform.LookAt(hit.point);
 
+                    adsr.PlayOneShot(launch);
+
                     actualItem.SetActive(true);
                     actualItem.transform.position = target.position;
                     actualItem.transform.rotation = target.rotation;
@@ -189,6 +196,10 @@ public class Player : MonoBehaviour
                         actualItem.GetComponent<Cars>().thrown = true;
                     }
 
+                    if (actualItem.GetComponent<Piece>() != null)
+                    {
+                        actualItem.GetComponent<Piece>().thrown = true;
+                    }
 
                     actualItem.GetComponent<Rigidbody>().isKinematic = false;
                     actualItem.GetComponent<Rigidbody>().useGravity = true;
