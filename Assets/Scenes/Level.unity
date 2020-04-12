@@ -568,8 +568,8 @@ MonoBehaviour:
   - {fileID: 7989333155085673257, guid: cff9be5f5394f244481f10f84c17bff0, type: 3}
   - {fileID: 7978315251970205688, guid: 63eff794f66ac8b4496e332fdeb6ab38, type: 3}
   - {fileID: 5266319081808548882, guid: 2f3937d767fd2d548888ec76ebf04a43, type: 3}
-  nbModuleLargeur: 10
-  nbModuleHauteur: 10
+  nbModuleLargeur: 3
+  nbModuleHauteur: 3
   width: 20
   heigth: 20
   tileOffset: {x: 0, y: 0, z: 0}
@@ -623,7 +623,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Tracked: {fileID: 0}
-  m_Size: {x: 200, y: 10, z: 200}
+  m_Size: {x: 100, y: 10, z: 100}
 --- !u!4 &1898878590
 Transform:
   m_ObjectHideFlags: 0
@@ -632,7 +632,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1898878588}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 89.5, y: 0, z: 82}
+  m_LocalPosition: {x: 33, y: 0, z: 50}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
