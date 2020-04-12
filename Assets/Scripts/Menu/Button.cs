@@ -6,10 +6,9 @@ using UnityEngine.UI;
 
 public class Button : MonoBehaviour
 {
-    [SerializeField]
-    private GameObject OptionCanvas = new GameObject();
-    [SerializeField]
-    private GameObject MenuCanvas = new GameObject();
+    public GameObject OptionCanvas;
+
+    public GameObject MenuCanvas;
 
     private void Awake()
     {
