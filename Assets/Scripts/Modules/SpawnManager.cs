@@ -12,16 +12,14 @@ public class SpawnManager : MonoBehaviour
     public float width;
     public float heigth;
     private int roomNb;
-    private List<GameObject> addedModule;
     public Vector3 tileOffset;
     private void Start()
     {
-        addedModule = new List<GameObject>();
         for (int i = 0; i < nbModuleLargeur*nbModuleHauteur; i++)
         {
             AddModule();
         }
-        
+        Instantiate(moduleList[0], new Vector3(-10,0,0), Quaternion.identity, transform);
     }
     
 
@@ -31,9 +29,7 @@ public class SpawnManager : MonoBehaviour
 
         float moduleWidth = width;
         tileOffset.x += moduleWidth / 2;
-
-        GameObject newModule = Instantiate(tilePrefab, tileOffset, Quaternion.identity, transform);
-        addedModule.Add(newModule);
+        Instantiate(tilePrefab, tileOffset, Quaternion.identity, transform);
 
         tileOffset.x += moduleWidth / 2;
 
@@ -49,7 +45,7 @@ public class SpawnManager : MonoBehaviour
 
     GameObject RandomModule()
     {
-        int randomIndex = Random.Range(0, moduleList.Length);
+        int randomIndex = Random.Range(1, moduleList.Length);
         return moduleList[randomIndex];
     }
 }
