@@ -47,8 +47,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.79999995, y: 2.2, z: 0.79999995}
-  m_Center: {x: 0, y: 1, z: 0}
+  m_Size: {x: 0.79999995, y: 2.2337098, z: 0.79999995}
+  m_Center: {x: 0, y: 0.0055491924, z: 0}
 --- !u!195 &5598682637933441051
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -68,7 +68,7 @@ NavMeshAgent:
   m_AutoBraking: 1
   m_AutoRepath: 1
   m_Height: 2
-  m_BaseOffset: 0.1
+  m_BaseOffset: 1.1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
 --- !u!114 &6226169170381761679
@@ -84,11 +84,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   state: 0
-  manager: {fileID: 0}
-  player: {fileID: 0}
   deadBody: {fileID: 213875003693772735, guid: 84f8d57863ade20438a69ddd16aaaffd, type: 3}
-  rotationAngle: 60
-  timing: 0
+  rotationAngle: 90
+  timing: 3
   patrouilles: []
 --- !u!114 &93975821434989189
 MonoBehaviour:
@@ -102,7 +100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18a5212e3addc7a4aae10e243c391025, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  viewRadius: 3
+  viewRadius: 10
   viewAngle: 60
   obstacleMask:
     serializedVersion: 2
@@ -134,12 +132,12 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 55843b4097ef52048a2c2607b3431085,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 55843b4097ef52048a2c2607b3431085,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 55843b4097ef52048a2c2607b3431085,
         type: 3}
