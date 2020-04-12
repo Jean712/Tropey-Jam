@@ -10,6 +10,6 @@ public class Win : MonoBehaviour
     private void Start()
     {
         score = GetComponent<Text>();
-        score.text = Inventory.finalValue.ToString();
+        score.text = "Tu as gagné " + Inventory.finalValue.ToString() + " argents";
     }
 }
